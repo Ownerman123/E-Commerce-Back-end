@@ -17,7 +17,7 @@ Category.hasMany(Product, {
 
 // Products belongToMany Tags (through ProductTag)
 Product.belongsToMany(Tag, {
-  through: 'ProductTag',
+  through: ProductTag,
   foreignKey: 'product_id', // Refers to Product model's primary key
   otherKey: 'tag_id',      // Refers to Tag model's primary key
   onDelete: 'CASCADE',
@@ -26,7 +26,7 @@ Product.belongsToMany(Tag, {
 })
 // Tags belongToMany Products (through ProductTag)
 Tag.belongsToMany(Product, {
-  through: 'ProductTag',
+  through: ProductTag,
   foreignKey: 'tag_id',    // Refers to Tag model's primary key
   otherKey: 'product_id',  // Refers to Product model's primary key
   onDelete: 'CASCADE',
